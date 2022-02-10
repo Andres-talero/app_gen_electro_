@@ -4,7 +4,7 @@ const Contenedor = styled.div`
     background: #fff;
     width: 90%;
     max-width: 80rem; /*1110px*/
-    height: 90vh;
+    height: 85vh;
     max-height: 60rem;  /* 800px */
     overflow-y: auto;
     box-shadow: 0px 1.25rem 2.5rem rgba(0,0,0,.05);
@@ -29,8 +29,7 @@ const Contenedor = styled.div`
  
     @media(max-width: 60rem){ /* 950px */
         max-height: none;
-        height: 90vh;
-        margin-bottom: 4.5rem;
+        height: 85vh;
     }
 
     body.dark & {
