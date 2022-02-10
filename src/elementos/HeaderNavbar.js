@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import BotonNavbar from './BotonNavbar';
 import { useNavBot } from '../contextos/NavBotContext';
+import favicon from './../imagenes/logo.png';
 
 const HeaderNavbar = () => {
 
@@ -12,7 +13,16 @@ const HeaderNavbar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
             <Container>
-            <Navbar.Brand href="#"><h3>GenElectro</h3></Navbar.Brand>
+            <Navbar.Brand href="#">
+                <img
+                alt=""
+                src={favicon}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+                />{' '}
+                <h3 className="d-inline-block align-top">GenElectro</h3>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
