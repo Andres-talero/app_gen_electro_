@@ -7,7 +7,7 @@ const Boton = styled(Link)`
     width: ${(props) => props.conIcono ? '15.62rem' : 'auto'}; /* 250px */
     margin: 0.3rem; /* 10px */
     border: none;
-    border-radius: 0.625rem; /* 10px */
+    border-radius: ${(props) => props.secundario ? '3rem' : '0.625rem'}; /* 10px */
     color: #fff;
     font-family: 'Work Sans', sans-serif;
     height: 3.75rem; /* 60px */
@@ -35,8 +35,8 @@ const Boton = styled(Link)`
 
     :hover{
         color: white;
-        border-radius: 1rem;
-        box-shadow: 0 6px 10px ${(props) => props.primario ? 'rgba(43, 161, 137, 0.8)' : props.danger ? 'rgba(192, 57, 43, 0.8)' : 'rgba(0, 0, 0, 0.8)'};
+        border-radius: ${(props) => props.secundario ? '3rem' : '1rem'};;
+        box-shadow: 0 6px 10px ${(props) => props.primario ? 'rgba(43, 161, 137, 0.8)' : props.danger ? 'rgba(192, 57, 43, 0.8)' : props.secundario ? 'rgba(0, 151, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)'};
         transition: all .4s ease-in-out;
     }
 

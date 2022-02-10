@@ -6,6 +6,7 @@ const Lista = styled.ul`
     padding: 0 2.5rem; /* 40px */
     height: 100%;
     overflow-y: auto;
+    font-size: 1.3rem;
  
     li {
         grid-template-columns: 1fr 1fr 1fr auto;
@@ -16,6 +17,7 @@ const Lista = styled.ul`
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
         }
+        font-size: 1rem;
     }
 `;
  
@@ -36,6 +38,8 @@ const ElementoLista = styled.li`
     &:hover a {
         opacity: 1;
     }
+
+
 `;
  
  
@@ -44,6 +48,7 @@ const ListaDeCategorias = styled.ul`
     padding: 0 2.5rem; /* 40px */
     height: 100%;
     overflow-y: auto;
+    
 `;
  
 const ElementoListaCategorias = styled.li`
@@ -51,6 +56,10 @@ const ElementoListaCategorias = styled.li`
     border-bottom: 2px solid #F2F2F2;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 60rem) { /*80px*/
+        padding: 1rem 0; /* 20px */
+    }
 `;
  
 const Categoria = styled.div`
@@ -67,8 +76,8 @@ const Categoria = styled.div`
         border-radius: 0.62rem; /* 10px */
     }
  
-    @media (max-width: 50rem) { /* 80px */
-        font-size: 1.12rem;
+    @media (max-width: 60rem) { /* 80px */
+        font-size: 1rem;
     }
 `;
  
@@ -76,8 +85,9 @@ const Descripcion = styled.div`
     justify-content: center;
     font-size: 1.25rem;
     text-transform: capitalize;
-    @media (max-width: 50rem) { /* 50px */
+    @media (max-width: 60rem) { /* 50px */
         justify-content: end;
+        font-size: 1rem;
     }
 `;
  
@@ -86,8 +96,9 @@ const Valor = styled.div`
     font-weight: 700;
     justify-content: end;
  
-    @media (max-width: 50rem) { /* 80px */
+    @media (max-width: 60rem) { /* 80px */
         justify-content: start;
+        font-size: 1rem;
     }
 `;
  
@@ -135,10 +146,14 @@ const BotonAccion = styled.button`
  
     svg {
         width: 1.125rem; /* 18px */
+        @media (max-width: 60rem) { /* 80px */
+            width: 1rem; /* 40px */
+    }
     }
  
-    @media (max-width: 50rem) { /* 80px */
+    @media (max-width: 60rem) { /* 80px */
         opacity: 1;
+        width: 2rem; /* 40px */
     }
 `;
  

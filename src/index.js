@@ -13,7 +13,9 @@ import { NavBotProvider } from './contextos/NavBotContext';
 import HeaderNavbar from './elementos/HeaderNavbar';
 import { AuthProvider } from './contextos/AuthContext';
 import { UserProvider } from './contextos/UserContext';
-import RutaPrivada from './componentes/RutaPrivada'
+import RutaPrivada from './componentes/RutaPrivada';
+import CrearCliente from './componentes/CrearCliente';
+import EditarCliente from './componentes/EditarCliente';
 
 
 
@@ -36,19 +38,32 @@ const Index = () => {
           <Routes>
             <Route path="/iniciar-sesion" element={<InicioSesion />}/>
 
-            <Route path="/crear-cuenta" element={
+          <Route path="/crear-cuenta" element={
                <RutaPrivada>
                  <RegistroUsuarios />
                  </RutaPrivada>
-            }/>
+          }/>
 
-            <Route path="/" element={
+          <Route path="/crear-cliente" element={
+               <RutaPrivada>
+                 <CrearCliente />
+                 </RutaPrivada>
+          }/>
+
+          <Route path="/editar/:id" element={
+               <RutaPrivada>
+                 <EditarCliente />
+                </RutaPrivada>
+          }/>
+
+      
+          <Route path="/" element={
                <RutaPrivada>
                   <App />
                </RutaPrivada>
-            }/>
+          }/>
 
-             <Route path="*" element={<InicioSesion />}/>
+          <Route path="*" element={<InicioSesion />}/>
 
           </Routes>
 

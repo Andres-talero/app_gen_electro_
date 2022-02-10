@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import { Helmet } from 'react-helmet';
-import {Header, Titulo, ContenedorHeader} from './elementos/Header'
-import { useUser } from './contextos/UserContext';
-import { useNavBot } from './contextos/NavBotContext';
-import ComprobarUsuario from './componentes/ComprobarRol';
-import Boton from './elementos/Boton';
-import ListaDeClientes from './componentes/ListaDeClientes';
+import {Header, Titulo, ContenedorHeader} from './../elementos/Header'
+import { useUser } from './../contextos/UserContext';
+import { useNavBot } from './../contextos/NavBotContext';
+import ComprobarUsuario from './ComprobarRol';
+import BtnRegresar from '../elementos/BtnRegresar';
+import FormularioGasto from './FormularioGasto';
 
 
 const App = () => {
@@ -29,11 +29,11 @@ useEffect(() => {
       <ComprobarUsuario Administrador Motorizado>
         <Header>
             <ContenedorHeader>
-              <Titulo>Clientes</Titulo>
-              <Boton to="/crear-cliente">Crear Nuevo</Boton>
+              <BtnRegresar ruta="/"/>
+              <Titulo>Crear Cliente</Titulo>
             </ContenedorHeader>
         </Header>
-        <ListaDeClientes />
+        <FormularioGasto />
       </ComprobarUsuario>
   </>
    );

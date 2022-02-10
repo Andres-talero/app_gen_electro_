@@ -21,7 +21,7 @@ const BotonNavbar = ({boton}) => {
         case 'clientes' :
                  return <Boton to="/" primario="true">Clientes</Boton>;
         case 'usuario' :
-                 return <Boton to="/" secundario="true">{datosUsuario.nombre.substr(0,1)}</Boton>;
+                 return <Boton to="/" secundario="true">{datosUsuario.nombre.substr(0,1)} - {datosUsuario.rol.substr(0,3).toUpperCase()}</Boton>;
         case 'cerrarSesion' :
             return <BotonCerrarSesion/>;
         case '' :

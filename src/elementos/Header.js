@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 const Header = styled.div`
     width: 100%;
-    padding: 1.3rem; /* 40px */
+    padding: 2rem; /* 40px */
     display: flex;
     justify-content: space-between;
     align-items: center;
  
     @media(max-width: 60rem){ /* 950px */
         justify-content: start;
+        padding: 1rem; /* 40px */
     }
 `;
  
@@ -19,19 +20,19 @@ const Titulo = styled.h1`
     
  
     @media(max-width: 60rem){ /* 950px */
-        font-size: 2rem; /* 32px */
+        font-size: 1.5rem; /* 32px */
+        margin-top: 1rem;
     }
 
     @media(max-width: 30rem){ /* 475px */
-        font-size: 1.5rem; /* 19.2px */
+        font-size: 1.3rem; /* 19.2px */
     }
 `;
  
 const ContenedorHeader = styled.div`
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding: .5rem;
+    justify-content: space-between;
  
     @media(max-width: 60rem){ /* 950px */
         display: flex;
