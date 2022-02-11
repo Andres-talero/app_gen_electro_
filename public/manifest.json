@@ -3,17 +3,17 @@
   "name": "Energias GenElectro",
   "icons": [
     {
-      "src": "../src/imagenes/logoM.png",
+      "src": "logoM.png",
       "sizes": "24x24",
       "type": "image/x-icon"
     },
     {
-      "src": "../src/imagenes/logoX.png",
+      "src": "logoX.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "./src/imagenes/logo.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "256X256"
     }

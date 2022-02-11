@@ -65,9 +65,7 @@ const ListaDeClientes = () => {
             <div key={index}>
               {!fechaEsIgual(clientes, index, cliente) &&  <Fecha>{cliente.nombres.substr(0,1).toUpperCase()}</Fecha>}
               <ElementoLista key={index}>
-                <Categoria>
-                  {cliente.nombres} {cliente.apellidos}
-                </Categoria>
+                <Categoria>{cliente.nombres} {cliente.apellidos}</Categoria>
 
                 <Descripcion>Doc. {cliente.documento}</Descripcion>
                 <Valor>Cel. {cliente.celular}</Valor>

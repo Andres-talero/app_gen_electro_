@@ -29,7 +29,6 @@ const Contenedor = styled.div`
  
     @media(max-width: 60rem){ /* 950px */
         max-height: none;
-        height: 85vh;
     }
 
     body.dark & {

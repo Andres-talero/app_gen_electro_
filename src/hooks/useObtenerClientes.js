@@ -44,7 +44,7 @@ const useObtenerGastos = () => {
             limit(10)
         );
 
-        const unsuscribe = onSnapshot(consulta, (snapshot) => {
+        const unsuscribe = onSnapshot(consulta, { includeMetadataChanges: true }, (snapshot) => {
 
             if(snapshot.docs.length > 0){
                 cambiarUltimoGasto(snapshot.docs[snapshot.docs.length -1]);

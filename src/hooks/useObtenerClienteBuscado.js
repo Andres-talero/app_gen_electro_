@@ -16,7 +16,7 @@ const useObtenerCliente = (doc) => {
             where('documento', '==', doc)
         );
 
-        const unsuscribe = onSnapshot(consult, (snapshot) => {
+        const unsuscribe = onSnapshot(consult, { includeMetadataChanges: true }, (snapshot) => {
              //Tranferir data al estado
              if(snapshot.docs.length > 0){
                 establecerCliente(snapshot.docs.map((cliente) => {
