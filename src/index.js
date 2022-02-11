@@ -51,7 +51,7 @@ const Index = () => {
                  </RutaPrivada>
           }/>
 
-          <Route path="/buscar-cliente/:doc" element={
+          <Route path="/cliente/:doc" element={
                <RutaPrivada>
                  <BuscarCliente />
                  </RutaPrivada>

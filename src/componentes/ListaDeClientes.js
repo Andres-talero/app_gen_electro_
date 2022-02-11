@@ -8,12 +8,15 @@ import { Link } from 'react-router-dom';
 import borrarCliente from '../firebase/borrarCliente';
 import Busqueda from '../elementos/Busqueda';
 import { useNavigate } from 'react-router-dom';
+import Alerta from '../elementos/Alerta';
 
 const ListaDeClientes = () => {
 
   const [clientes, obtenerMasClientes, hayMasPorCargar] = useObtenerClientes();
   const [buscar, cambiarBuscar] = useState('')
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
+  const [alerta, cambiarAlerta] = useState({});
 
   //Función para transformar la fecha de cara al usuario
   
@@ -28,14 +31,22 @@ const ListaDeClientes = () => {
     }   
   }
 
-  const handleSubmit =(e) =>{
+  const handleSubmit = (e) =>{
     e.preventDefault();
     if(buscar !== ''){
-      navigate(`/buscar-cliente/${buscar}`)
-    } else{
-      navigate(`/buscar-cliente/0`)
+      navigate(`/cliente/${buscar}`)
     }
+  }
 
+  const pBorrarCliente = (id) =>{
+    borrarCliente(id)
+    cambiarAlerta({tipo: 'exito', mensaje: 'El cliente fue eliminado correctamente.'});
+    cambiarEstadoAlerta(true);
+  }
+
+
+  const verCliente = (doc) => {
+    navigate(`/cliente/${doc}`)
   }
 
 
@@ -65,14 +76,12 @@ const ListaDeClientes = () => {
             <div key={index}>
               {!fechaEsIgual(clientes, index, cliente) &&  <Fecha>{cliente.nombres.substr(0,1).toUpperCase()}</Fecha>}
               <ElementoLista key={index}>
-                <Categoria>{cliente.nombres} {cliente.apellidos}</Categoria>
-
-                <Descripcion>Doc. {cliente.documento}</Descripcion>
-                <Valor>Cel. {cliente.celular}</Valor>
-
+                <Categoria onClick={() => {verCliente(cliente.documento)}}>{cliente.nombres} {cliente.apellidos}</Categoria>
+                <Descripcion onClick={() => {verCliente(cliente.documento)}}>Doc. {cliente.documento}</Descripcion>
+                <Valor onClick={() => {verCliente(cliente.documento)}}>Cel. {cliente.celular}</Valor>
                 <ContenedorBotones>
                   <BotonAccion as={Link} to={`/editar/${cliente.id}`}><IconoEditar/></BotonAccion>
-                  <BotonAccion onClick={() => {borrarCliente(cliente.id)}}><IconoBorrar /></BotonAccion>
+                  <BotonAccion onClick={() => {pBorrarCliente(cliente.id)}}><IconoBorrar /></BotonAccion>
                 </ContenedorBotones>
               </ElementoLista>
             </div>
@@ -92,9 +101,16 @@ const ListaDeClientes = () => {
           </ContenedorSubtitulo>
         }
       </Lista>
+      <Alerta 
+                tipo={alerta.tipo}
+                mensaje={alerta.mensaje}
+                estadoAlerta={estadoAlerta}
+                cambiarEstadoAlerta={cambiarEstadoAlerta}
+      />
 
       </>
       );
 }
  
+
 export default ListaDeClientes;

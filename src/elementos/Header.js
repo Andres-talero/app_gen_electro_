@@ -10,7 +10,7 @@ const Header = styled.div`
  
     @media(max-width: 60rem){ /* 950px */
         justify-content: start;
-        padding: 2rem; /* 40px */
+        padding: 1rem; /* 40px */
     }
 `;
  
@@ -40,6 +40,7 @@ const ContenedorHeader = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 1rem;
  
         & > div {
             display: flex;

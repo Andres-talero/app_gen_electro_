@@ -10,7 +10,7 @@ const RutaPrivada = ({children}) => {
             children
         );
     } else {
-        return <Navigate to="/iniciar-sesion" />
+        return <Navigate to="/" />
     }
 }
  

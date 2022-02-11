@@ -3,8 +3,9 @@ import {Header, Titulo, ContenedorHeader} from './../elementos/Header';
 import BtnRegresar from './../elementos/BtnRegresar';
 import useObtenerCliente from '../hooks/useObtenerClienteBuscado';
 import { useParams } from 'react-router';
-import styled from 'styled-components';
+import DatosCliente from './DatosCliente';
 import Boton from '../elementos/Boton';
+import {Contenedor, TextoPrincipal} from './../elementos/ElementosInformacion';
 
 const BuscarCliente = () => {
 
@@ -14,31 +15,22 @@ const BuscarCliente = () => {
     return ( 
         <>
         <Helmet>
-        <title>Busqueda Cliente</title>
+        <title>Cliente</title>
       </Helmet>
         <Header>
             <ContenedorHeader>
                 <BtnRegresar ruta="/"/>
-              <Titulo>Busqueda Cliente</Titulo>
+              <Titulo>Cliente</Titulo>
             </ContenedorHeader>
         </Header>
         <Contenedor>
         {cliente !== 'No hay concidencias' ?
 
-        <>
-            {cliente.map((cli, index) =>{
-                return(
-                    <div key={index}>
-                        <h1>{cli.nombres}</h1>
-                    </div>
-                );
-            })}
-        </>
-
+        <DatosCliente cliente={cliente}/>
         
         : <>
-            <Texto>No hay datos del usuario especificado</Texto>
-            <Boton to="/">Regresar a la lista</Boton>
+            <TextoPrincipal>No hay datos del cliente especificado</TextoPrincipal>
+            <Boton to="/crear-cliente">Crear Cliente</Boton>
         </>}
 
         </Contenedor>
@@ -46,25 +38,5 @@ const BuscarCliente = () => {
      );
 }
 
-const Contenedor = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    @media (max-width: 60rem) { /*80px*/
-        font-size: 1rem;
-        display: flex;
-    }
-`;
-
-const Texto = styled.p`
-    font-size: 3rem;
-    @media (max-width: 60rem) { /*80px*/
-        font-size: 1.5rem;
-    }
-`
  
 export default BuscarCliente;

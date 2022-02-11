@@ -1,15 +1,15 @@
 import { db } from './../firebase/firebaseConfig'
 import { collection, addDoc } from 'firebase/firestore';
 
-const agregarCliente = ({nombres, apellidos, documento, correo, celular, direccion, ciudad, fecha, uidUsuario}) => {
+const agregarCliente = async({nombres, apellidos, documento, correo, celular, direccion, ciudad, fecha, uidUsuario}) => {
 
 
-    return ( 
-            addDoc(collection(db, 'clientes'), {
+    return await( 
+            await addDoc(collection(db, 'clientes'), {
                 nombres: nombres.toUpperCase(),
                 apellidos: apellidos.toUpperCase(),
                 documento: Number(documento),
-                correo: correo.toUpperCase(),
+                correo: correo,
                 celular: Number(celular),
                 direccion: direccion.toUpperCase(),
                 ciudad: ciudad.toUpperCase(),

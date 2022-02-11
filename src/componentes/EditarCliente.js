@@ -14,6 +14,11 @@ const EditarCliente = () => {
   const [cliente] = useObtenerCliente(id);
   const {datosUsuario} = useUser();
   const {cambiarBotones} = useNavBot();
+  let documento = '';
+
+  if(cliente){
+    documento = cliente.data().documento;
+  }
 
 
   useEffect(() => {
@@ -30,7 +35,7 @@ const EditarCliente = () => {
 
       <Header>
         <ContenedorHeader>
-          <BtnRegresar ruta="/"/>
+          <BtnRegresar ruta={`/cliente/${documento}`}/>
         <Titulo>Editar Cliente</Titulo>
         </ContenedorHeader>
     </Header>

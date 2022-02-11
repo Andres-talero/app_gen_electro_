@@ -7,14 +7,13 @@ const editarCliente = async ({id, nombres, apellidos, documento, correo, celular
 return await(
 
             await updateDoc(doc(db, 'clientes', id), {
-                id: id,
-                nombres: nombres,
-                apellidos: apellidos,
-                documento: documento,
+                nombres: nombres.toUpperCase(),
+                apellidos: apellidos.toUpperCase(),
+                documento: Number(documento),
                 correo: correo,
-                celular: celular,
-                direccion: direccion,
-                ciudad: ciudad,
+                celular: Number(celular),
+                direccion: direccion.toUpperCase(),
+                ciudad: ciudad.toUpperCase(),
                 fecha: fecha
             })
 

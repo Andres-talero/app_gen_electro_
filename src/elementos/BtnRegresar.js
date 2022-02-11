@@ -23,6 +23,7 @@ const Btn = styled.button`
         width: 2.5rem; /* 40px */
         height: 2.5rem; /* 40px */
         line-height: 2.5rem; /* 40px */
+        margin-right: 0; /* 20px */
     }
 `;
  

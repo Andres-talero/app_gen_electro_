@@ -12,11 +12,10 @@ const useObtenerCliente = (doc) => {
 
         const consult = query(
             collection(db, 'clientes'),
-            orderBy('nombres', 'desc'),
-            where('documento', '==', doc)
+            where('documento', '==', Number(doc))
         );
 
-        const unsuscribe = onSnapshot(consult, { includeMetadataChanges: true }, (snapshot) => {
+        const unsuscribe = onSnapshot(consult, (snapshot) => {
              //Tranferir data al estado
              if(snapshot.docs.length > 0){
                 establecerCliente(snapshot.docs.map((cliente) => {

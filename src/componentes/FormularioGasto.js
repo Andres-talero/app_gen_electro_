@@ -108,8 +108,8 @@ const Formulariocliente = ({cliente}) => {
                         ciudad: ciudad,
                         fecha: fecha
                     })
-                        navigate("/");
-                        
+                        navigate(`/cliente/${documento}`);
+
                 } else {
 
                     agregarCliente({
@@ -134,6 +134,7 @@ const Formulariocliente = ({cliente}) => {
                         cambiarFecha(new Date());
     
                         cambiarEstadoAlerta(true);
+                        cambiarAlerta({tipo: 'exito', mensaje: 'El cliente fue agregado correctamente.'});
                 }
             }else{
                 cambiarEstadoAlerta(true);

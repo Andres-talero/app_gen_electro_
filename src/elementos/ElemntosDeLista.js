@@ -33,10 +33,10 @@ const Lista = styled.ul`
 `;
  
 const ElementoLista = styled.li`
-    padding: 1.25rem 0; /* 20px */
+    padding: 1rem 0; /* 20px */
     border-bottom: 2px solid #F2F2F2;
     display: grid;
-    gap: 0.31rem; /* 5px */
+    gap: 0rem;
     justify-content: space-between;
  
     & > div {
@@ -79,6 +79,8 @@ const Categoria = styled.div`
     text-transform: uppercase;
     display: flex;
     align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
     
     svg {
         width: 3.12rem; /* 50px */
@@ -89,6 +91,7 @@ const Categoria = styled.div`
  
     @media (max-width: 60rem) { /* 80px */
         font-size: 1rem;
+        padding: 1rem 0;
     }
 `;
  
@@ -96,6 +99,7 @@ const Descripcion = styled.div`
     justify-content: center;
     font-size: 1.25rem;
     text-transform: capitalize;
+    cursor: pointer;
     @media (max-width: 60rem) { /* 50px */
         justify-content: end;
         font-size: 1rem;
@@ -106,6 +110,7 @@ const Valor = styled.div`
     font-size: 1.25rem; /* 20px */
     font-weight: 700;
     justify-content: end;
+    cursor: pointer;
  
     @media (max-width: 60rem) { /* 80px */
         justify-content: start;
@@ -164,7 +169,7 @@ const BotonAccion = styled.button`
  
     @media (max-width: 60rem) { /* 80px */
         opacity: 1;
-        width: 2rem; /* 40px */
+        width: 50%; /* 40px */
     }
 `;
  

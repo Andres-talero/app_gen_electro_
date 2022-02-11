@@ -33,7 +33,7 @@ const OpcionSeleccionada = styled.div`
     align-items: center;
     justify-content: space-between;
     @media(max-width: 60rem){ /* 950px */
-        height: 5rem; /* 80px */
+        height: 2rem; /* 80px */
     }
 `;
  
