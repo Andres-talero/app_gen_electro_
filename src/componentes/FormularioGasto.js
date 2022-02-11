@@ -107,12 +107,11 @@ const Formulariocliente = ({cliente}) => {
                         direccion: direccion,
                         ciudad: ciudad,
                         fecha: fecha
-                    }).then(() =>{
-                        navigate("/");
-                    }).catch((error) => {
-                        console.log(error);
                     })
+                        navigate("/");
+                        
                 } else {
+
                     agregarCliente({
                         nombres: nombres,
                         apellidos: apellidos,
@@ -124,7 +123,7 @@ const Formulariocliente = ({cliente}) => {
                         fecha: getUnixTime(fecha),
                         uidUsuario: usuario.uid
                     })
-                    .then(() => {
+
                         cambiarnombres('');
                         cambiarapellidos('');
                         cambiarDocumento('');
@@ -135,12 +134,6 @@ const Formulariocliente = ({cliente}) => {
                         cambiarFecha(new Date());
     
                         cambiarEstadoAlerta(true);
-                        cambiarAlerta({tipo: 'exito', mensaje: 'El cliente fue agregado correctamente.'});
-                    })
-                    .catch((error) => {
-                        cambiarEstadoAlerta(true);
-                        cambiarAlerta({tipo: 'error', mensaje: 'Hubo un problema al agregar el cliente.'})
-                    })
                 }
             }else{
                 cambiarEstadoAlerta(true);

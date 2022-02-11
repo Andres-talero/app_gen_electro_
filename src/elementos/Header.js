@@ -6,10 +6,11 @@ const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: auto;
  
     @media(max-width: 60rem){ /* 950px */
         justify-content: start;
-        padding: 1rem; /* 40px */
+        padding: 2rem; /* 40px */
     }
 `;
  
@@ -33,10 +34,11 @@ const ContenedorHeader = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 2rem;
  
     @media(max-width: 60rem){ /* 950px */
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
  
         & > div {

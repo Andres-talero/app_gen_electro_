@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useUser } from './../contextos/UserContext';
 import { useNavBot } from './../contextos/NavBotContext';
 import { Helmet } from 'react-helmet';
-import {Header, Titulo} from '../elementos/Header'
+import {Header, Titulo, ContenedorHeader} from '../elementos/Header'
 import BtnRegresar from '../elementos/BtnRegresar';
 import FormularioGasto from './FormularioGasto';
 import { useParams } from 'react-router-dom';
@@ -29,8 +29,10 @@ const EditarCliente = () => {
       </Helmet>
 
       <Header>
+        <ContenedorHeader>
           <BtnRegresar ruta="/"/>
         <Titulo>Editar Cliente</Titulo>
+        </ContenedorHeader>
     </Header>
 
     <FormularioGasto cliente={cliente}/>

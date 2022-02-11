@@ -18,7 +18,7 @@ const ContenedorFiltros = styled.div`
  
 const Formulario = styled.form`
     padding: 0 3rem; /* 40px */
- 
+    margin-bottom: 2rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@ const Formulario = styled.form`
     input {
         width: 100%;
         text-align: center;
-        padding: 1.5rem;
+        padding: 1rem;
         &::placeholder {
             color: rgba(0,0,0,.2);
         }
