@@ -1,12 +1,11 @@
-import { dbRealT } from './firebaseConfig'
-import { set, ref } from 'firebase/database';
-import { v4 as uuidv4 } from 'uuid';
+import { db } from './../firebase/firebaseConfig'
+import { collection, addDoc } from 'firebase/firestore';
 
 const agregarCliente = ({nombres, apellidos, documento, correo, celular, direccion, ciudad, fecha, uidUsuario}) => {
 
 
     return ( 
-            set(ref(dbRealT, 'clientes/' + uuidv4()), {
+            addDoc(collection(db, 'clientes'), {
                 nombres: nombres.toUpperCase(),
                 apellidos: apellidos.toUpperCase(),
                 documento: Number(documento),

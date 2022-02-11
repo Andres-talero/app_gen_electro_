@@ -11,6 +11,17 @@ const Lista = styled.ul`
     li {
         grid-template-columns: 1fr 1fr 1fr auto;
     }
+
+    ::-webkit-scrollbar{
+	transition: .3s ease all;
+	width: 8.5px;
+	background: rgba(125, 206, 160, 0.363);
+    }
+
+    ::-webkit-scrollbar-thumb{
+	background: rgba(43, 161, 137, 0.6);
+	border-radius: 8.5px;
+    }
  
     @media (max-width: 50rem) { /*80px*/
         li {
@@ -104,7 +115,7 @@ const Valor = styled.div`
  
 const Fecha = styled.div`
     border-radius: 0.31rem; /* 5px */
-    background: ${theme.azulClaro};
+    background: #5CBAFF ;
     text-align: center;
     color: #fff;
     padding: 0.62rem 3.12rem; /* 10px 50px */

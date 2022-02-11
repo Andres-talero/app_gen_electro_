@@ -1,11 +1,12 @@
-import { dbRealT } from './firebaseConfig'
-import { update, ref, child} from 'firebase/database';
+import { db } from './../firebase/firebaseConfig'
+import { doc, updateDoc } from 'firebase/firestore';
+
 
 const editarCliente = async ({id, nombres, apellidos, documento, correo, celular, direccion, ciudad, fecha}) => {
 
 return await(
 
-            await update(child(ref(dbRealT), `clientes/${id}`), {
+            await updateDoc(doc(db, 'clientes', id), {
                 id: id,
                 nombres: nombres,
                 apellidos: apellidos,

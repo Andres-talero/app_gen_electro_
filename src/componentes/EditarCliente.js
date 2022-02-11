@@ -33,7 +33,7 @@ const EditarCliente = () => {
         <Titulo>Editar Cliente</Titulo>
     </Header>
 
-    <FormularioGasto cliente={cliente} id={id}/>
+    <FormularioGasto cliente={cliente}/>
 
     </>
       );

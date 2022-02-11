@@ -1,11 +1,11 @@
-import { dbRealT } from "./firebaseConfig";
-import { remove, ref, child} from 'firebase/database';
-
+import { db } from "./firebaseConfig"
+import {doc, deleteDoc} from 'firebase/firestore'
 
 const borrarCliente = async(id) => {
 
+
     try{
-        await remove(child(ref(dbRealT), `clientes/${id}`))
+        await deleteDoc(doc(db, 'clientes', id))
         } catch(error){
             console.log('Se presento el error:')
             console.log(error)

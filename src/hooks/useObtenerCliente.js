@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { dbRealT } from "../firebase/firebaseConfig";
-import { onValue, ref} from 'firebase/database';
+import { db } from "../firebase/firebaseConfig";
+import { doc, getDoc} from 'firebase/firestore';
 import { useNavigate } from "react-router-dom";
 
 
@@ -15,17 +15,13 @@ const useObtenerCliente = (id) => {
 
         const obtenerGasto = async() =>{
 
+            const documento = await getDoc(doc(db, 'clientes', id));
 
-            const unsuscribe = await onValue(ref(dbRealT, 'clientes/' + id), (snapshot) => {
-                if (snapshot.exists()) {
-                    establecerCliente(snapshot.val());
-                }else{
-                    navigate('/lista');
-                }
-            });
-
-            return unsuscribe;
-
+            if(documento.data()){
+                establecerCliente(documento);
+            } else {
+                navigate('/lista');
+            }
 
         }
 

@@ -30,7 +30,8 @@ const Boton = styled(Link)`
 
     @media(max-width: 30rem){ /* 475px */
         font-size: 1rem; /* 19.2px */
-          padding: 1rem 1.4rem; /* 20px 30px */
+          padding: .5rem 1rem; /* 20px 30px */
+          height: 3rem; /* 60px */
     }
 
     :hover{

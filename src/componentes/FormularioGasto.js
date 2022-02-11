@@ -10,7 +10,7 @@ import Alerta from '../elementos/Alerta';
 import { useNavigate } from 'react-router-dom';
 import editarCliente from '../firebase/editarCliente';
 
-const Formulariocliente = ({cliente, id}) => {
+const Formulariocliente = ({cliente}) => {
 
 
     const [nombres, cambiarnombres] = useState('');
@@ -32,14 +32,14 @@ const Formulariocliente = ({cliente, id}) => {
         if(cliente){
             //Comprobamos si el cliente es del usuario actual.
             //Comprobamos con el uid que tenemos guardado con el del uid del cliente
-                cambiarnombres(cliente.nombres);
-                cambiarapellidos(cliente.apellidos)
-                cambiarDocumento(cliente.documento);
-                cambiarcorreo(cliente.correo);
-                cambiarCelular(cliente.celular);
-                cambiarDireccion(cliente.direccion);
-                cambiarCiudad(cliente.ciudad);
-                cambiarFecha(cliente.fecha)
+                cambiarnombres(cliente.data().nombres);
+                cambiarapellidos(cliente.data().apellidos)
+                cambiarDocumento(cliente.data().documento);
+                cambiarcorreo(cliente.data().correo);
+                cambiarCelular(cliente.data().celular);
+                cambiarDireccion(cliente.data().direccion);
+                cambiarCiudad(cliente.data().ciudad);
+                cambiarFecha(cliente.data().fecha)
         }
     }, [cliente, usuario, navigate])
 
@@ -98,7 +98,7 @@ const Formulariocliente = ({cliente, id}) => {
 
                 if(cliente){
                     editarCliente({
-                        id: id,
+                        id: cliente.id,
                         nombres: nombres,
                         apellidos: apellidos,
                         documento: documento,

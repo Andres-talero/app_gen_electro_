@@ -16,6 +16,7 @@ import { UserProvider } from './contextos/UserContext';
 import RutaPrivada from './componentes/RutaPrivada';
 import CrearCliente from './componentes/CrearCliente';
 import EditarCliente from './componentes/EditarCliente';
+import BuscarCliente from './componentes/BuscarCliente';
 
 
 
@@ -47,6 +48,12 @@ const Index = () => {
           <Route path="/crear-cliente" element={
                <RutaPrivada>
                  <CrearCliente />
+                 </RutaPrivada>
+          }/>
+
+          <Route path="/buscar-cliente/:doc" element={
+               <RutaPrivada>
+                 <BuscarCliente />
                  </RutaPrivada>
           }/>
 

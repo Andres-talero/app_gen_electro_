@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import { Helmet } from 'react-helmet';
-import {Header, Titulo, ContenedorHeader} from './elementos/Header'
+import {Header, Titulo, ContenedorHeader} from './elementos/Header';
 import { useUser } from './contextos/UserContext';
 import { useNavBot } from './contextos/NavBotContext';
 import ComprobarUsuario from './componentes/ComprobarRol';
 import Boton from './elementos/Boton';
 import ListaDeClientes from './componentes/ListaDeClientes';
+import { Navigate } from 'react-router';
 
 
 const App = () => {
@@ -35,6 +36,7 @@ useEffect(() => {
         </Header>
         <ListaDeClientes />
       </ComprobarUsuario>
+      <ComprobarUsuario Asesor><Navigate to="/iniciar-sesion" /></ComprobarUsuario>
   </>
    );
 }
