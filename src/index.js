@@ -37,7 +37,14 @@ const Index = () => {
         <Contenedor>
 
           <Routes>
-            <Route path="/iniciar-sesion" element={<InicioSesion />}/>
+
+           <Route path="/iniciar-sesion" element={<InicioSesion />}/>
+
+           <Route path="/" element={
+               <RutaPrivada>
+                  <App />
+               </RutaPrivada>
+          }/>
 
           <Route path="/crear-cuenta" element={
                <RutaPrivada>
@@ -61,13 +68,6 @@ const Index = () => {
                <RutaPrivada>
                  <EditarCliente />
                 </RutaPrivada>
-          }/>
-
-      
-          <Route path="/" element={
-               <RutaPrivada>
-                  <App />
-               </RutaPrivada>
           }/>
 
           <Route path="*" element={<InicioSesion />}/>
