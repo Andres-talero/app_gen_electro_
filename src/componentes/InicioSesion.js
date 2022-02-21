@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import {Header, Titulo, ContenedorHeader} from './../elementos/Header'
 import Boton from '../elementos/Boton';
 import {Formulario, Input, ContenedorBoton} from './../elementos/ElementosDeFormulario'
-import {ReactComponent as SvgLogin} from './../imagenes/login.svg'
 import { useNavigate } from 'react-router';
 import Alerta from '../elementos/Alerta';
 import {auth} from './../firebase/firebaseConfig'

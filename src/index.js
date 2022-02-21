@@ -17,6 +17,8 @@ import RutaPrivada from './componentes/RutaPrivada';
 import CrearCliente from './componentes/CrearCliente';
 import EditarCliente from './componentes/EditarCliente';
 import BuscarCliente from './componentes/BuscarCliente';
+import ValidaeSesion from './componentes/ValidarSesion';
+import ValidarSesion from './componentes/ValidarSesion';
 
 
 
@@ -38,7 +40,11 @@ const Index = () => {
 
           <Routes>
 
-           <Route path="/iniciar-sesion" element={<InicioSesion />}/>
+           <Route path="/iniciar-sesion" element={
+             <ValidarSesion>
+                <InicioSesion />
+             </ValidarSesion>
+             }/>
 
            <Route path="/" element={
                <RutaPrivada>

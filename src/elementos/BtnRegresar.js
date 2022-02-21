@@ -38,7 +38,7 @@ const BtnRegresar = ({ruta = '/'}) => {
     const navigate = useNavigate();
 
     return (  
-        <Btn onClick={() => {navigate(ruta)}}><Icono /></Btn>
+        <Btn onClick={() => {navigate(-1)}}><Icono /></Btn>
     );
 }
  

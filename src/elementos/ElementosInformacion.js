@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Contenedor = styled.div`
@@ -11,8 +10,10 @@ const Contenedor = styled.div`
     }
 `;
 
+
 const ContenedorDatos = styled.div`
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +22,18 @@ const ContenedorDatos = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+`;
+
+const ContenedorNoDatos = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+    @media(max-width: 60rem){ /* 950px */
     }
 `;
 
@@ -115,4 +128,4 @@ const BotonAccion = styled.button`
 
 `;
 
-export {Contenedor, ContenedorDatos, Informacion, Dato, TextoPrincipal, Span, Texto, ContenedorBotones, BotonAccion}
+export {Contenedor, ContenedorDatos, ContenedorNoDatos, Informacion, Dato, TextoPrincipal, Span, Texto, ContenedorBotones, BotonAccion}

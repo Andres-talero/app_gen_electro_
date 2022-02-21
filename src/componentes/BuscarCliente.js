@@ -5,7 +5,7 @@ import useObtenerCliente from '../hooks/useObtenerClienteBuscado';
 import { useParams } from 'react-router';
 import DatosCliente from './DatosCliente';
 import Boton from '../elementos/Boton';
-import {Contenedor, TextoPrincipal} from './../elementos/ElementosInformacion';
+import {Contenedor, ContenedorNoDatos, TextoPrincipal} from './../elementos/ElementosInformacion';
 
 const BuscarCliente = () => {
 
@@ -28,10 +28,10 @@ const BuscarCliente = () => {
 
         <DatosCliente cliente={cliente}/>
         
-        : <>
+        : <ContenedorNoDatos>
             <TextoPrincipal>No hay datos del cliente especificado</TextoPrincipal>
             <Boton to="/crear-cliente">Crear Cliente</Boton>
-        </>}
+        </ContenedorNoDatos>}
 
         </Contenedor>
         </>
