@@ -8,7 +8,7 @@ import BtnRegresar from '../elementos/BtnRegresar';
 import FormularioGasto from './FormularioGasto';
 
 
-const App = () => {
+const CrearCliente = () => {
 
   const {datosUsuario} = useUser();
   const {cambiarBotones} = useNavBot();
@@ -16,7 +16,8 @@ const App = () => {
 
 useEffect(() => {
   datosUsuario.rol==='Motorizado' ? cambiarBotones([{name: 'usuario'}, {name: 'cerrarSesion'}]) : 
-  datosUsuario.rol==='Administrador' ? cambiarBotones([{name: 'registro'}, {name: 'usuario'}, {name: 'cerrarSesion'}]) : <></>
+  datosUsuario.rol==='Asesor' ? cambiarBotones([{name: 'usuario'}, {name: 'cerrarSesion'}]) : 
+  datosUsuario.rol==='Administrador' ? cambiarBotones([{name: 'errores'}, {name: 'registro'}, {name: 'usuario'}, {name: 'cerrarSesion'}]) : <></>
 }, [cambiarBotones, datosUsuario])
 
 
@@ -39,4 +40,4 @@ useEffect(() => {
    );
 }
  
-export default App;
+export default CrearCliente;

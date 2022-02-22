@@ -14,14 +14,16 @@ const BotonNavbar = ({boton}) => {
             return <Boton to="/categorias" primario="true">Categorias</Boton>;
         case 'lista' :
             return <Boton to="/lista" primario="true">Gastos</Boton>;
+        case 'errores' :
+                return <Boton to="/errores" primario="true">Errores</Boton>;
         case 'registro' :
-                return <Boton to="/crear-cuenta" primario="true">Registro</Boton>
+                return <Boton to="/crear-cuenta" primario="true">Registro</Boton>;
         case 'iniciar-sesion' :
                     return <Boton to="/iniciar-sesion" primario="true">Iniciar Sesion</Boton>
         case 'clientes' :
                  return <Boton to="/" primario="true">Clientes</Boton>;
         case 'usuario' :
-                 return <Boton to="/" secundario="true">{datosUsuario.nombre.substr(0,1)} - {datosUsuario.rol.substr(0,3).toUpperCase()}</Boton>;
+                 return <Boton to="/" secundario="true">{datosUsuario.nombre.substr(0,1).toUpperCase()} - {datosUsuario.rol.substr(0,3).toUpperCase()}</Boton>;
         case 'cerrarSesion' :
             return <BotonCerrarSesion/>;
         case '' :

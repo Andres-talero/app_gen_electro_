@@ -17,8 +17,10 @@ import RutaPrivada from './componentes/RutaPrivada';
 import CrearCliente from './componentes/CrearCliente';
 import EditarCliente from './componentes/EditarCliente';
 import BuscarCliente from './componentes/BuscarCliente';
-import ValidaeSesion from './componentes/ValidarSesion';
 import ValidarSesion from './componentes/ValidarSesion';
+import ErroresPresentados from './componentes/ErroresPresentados';
+import CrearError from './componentes/CrearError';
+import EditarError from './componentes/EditarError';
 
 
 
@@ -67,6 +69,24 @@ const Index = () => {
           <Route path="/cliente/:doc" element={
                <RutaPrivada>
                  <BuscarCliente />
+                 </RutaPrivada>
+          }/>
+
+          <Route path="/errores" element={
+               <RutaPrivada>
+                 <ErroresPresentados />
+                 </RutaPrivada>
+          }/>
+
+          <Route path="/crear-error/:doc" element={
+               <RutaPrivada>
+                 <CrearError />
+                 </RutaPrivada>
+          }/>
+
+          <Route path="/editar-error/:id" element={
+               <RutaPrivada>
+                 <EditarError />
                  </RutaPrivada>
           }/>
 

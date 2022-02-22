@@ -59,11 +59,14 @@ const Input = styled.input`
 `;
  
 const InputGrande = styled(Input)`
-    font-size: 3.5rem; /* 60px */
+    font-size: 2rem;
     font-weight: bold;
-    @media(max-width: 30rem){ /* 475px */
-        font-size: 2.2rem; /* 19.2px */
-    }
+`;
+
+const InputItalic = styled(Input)`
+    font-style: italic;
+    font-weight: lighter;
+    color: grey;
 `;
  
 const ContenedorBoton = styled.div`
@@ -72,4 +75,4 @@ const ContenedorBoton = styled.div`
     margin: 2.5rem 0;  /* 40px */
 `;
 
-export {ContenedorFiltros, Formulario, Input, InputGrande, ContenedorBoton};
+export {ContenedorFiltros, Formulario, Input, InputGrande, InputItalic, ContenedorBoton};

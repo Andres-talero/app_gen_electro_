@@ -12,6 +12,8 @@ import { useNavBot } from '../contextos/NavBotContext';
 import crearUsuario from '../firebase/crearUsuario';
 import { useUser } from './../contextos/UserContext';
 import SelectRol from './SelectRol';
+import ComprobarUsuario from './../componentes/ComprobarRol';
+import { Navigate } from 'react-router';
 
 
 
@@ -19,11 +21,11 @@ const RegistroUsuarios = () => {
 
 
   
-    const {datosUsuario} = useUser();
+  const {datosUsuario} = useUser();
   const {cambiarBotones} = useNavBot();
 
   useEffect(() => {
-    datosUsuario.rol==='Administrador' ? cambiarBotones([{name: 'clientes'}, {name: 'usuario'}, {name: 'cerrarSesion'}]) : <></>
+    datosUsuario.rol==='Administrador' ? cambiarBotones([{name: 'errores'}, {name: 'clientes'}, {name: 'usuario'}, {name: 'cerrarSesion'}]) : <></>
   }, [cambiarBotones, datosUsuario])
   
   
@@ -41,7 +43,7 @@ const RegistroUsuarios = () => {
   const handleChange = (e) => {
     switch(e.target.name){
       case 'nombre' :
-        establecerNombre(e.target.value.replace(/[^a-z.A-Z]/g, ''));
+        establecerNombre(e.target.value.replace(/[^a-z.A-Z ]/g, ''));
         break;
       case 'celular' :
         const preCelular = e.target.value.replace(/[^0-9.]/g, '');
@@ -112,7 +114,7 @@ const RegistroUsuarios = () => {
       }
 
       cambiarEstadoAlerta(true);
-      cambiarAlerta({tipo: 'error', mensaje: mensaje});
+      cambiarAlerta({tipo: 'error', mensaje: mensaje}); 
 
     }
 
@@ -130,6 +132,7 @@ const RegistroUsuarios = () => {
           </ContenedorHeader>
         </Header>
 
+        <ComprobarUsuario Administrador>
         <Formulario onSubmit={handleSubmit}>
         <Input
             type="nombre"
@@ -173,6 +176,10 @@ const RegistroUsuarios = () => {
           </ContenedorBoton>
         </Formulario>
        <Alerta tipo={alerta.tipo} mensaje={alerta.mensaje} estadoAlerta={estadoAlerta} cambiarEstadoAlerta={cambiarEstadoAlerta}/>
+       </ComprobarUsuario>
+       <ComprobarUsuario Motorizado Asesor>
+       <Navigate to="/" />
+       </ComprobarUsuario>
         </>
       );
 }

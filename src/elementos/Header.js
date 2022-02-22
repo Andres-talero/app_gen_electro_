@@ -13,6 +13,26 @@ const Header = styled.div`
         padding: 1rem; /* 40px */
     }
 `;
+
+const HeaderErrores = styled.div`
+    width: 100wv;
+    padding: 3rem 10rem; /* 40px */
+    margin: 3rem 3rem -1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    border-top: 2px dashed;
+ 
+    @media(max-width: 60rem){ /* 950px */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1rem;
+        padding: 0 10rem; /* 40px */
+        margin: 3rem 3rem -2rem 3rem;
+    }
+`;
  
 const Titulo = styled.h1`
     font-weight: normal;
@@ -56,4 +76,4 @@ const ContenedorBotones = styled.div`
     align-items: center;
 `;
 
-export {Header, Titulo, ContenedorHeader, ContenedorBotones};
+export {Header, HeaderErrores, Titulo, ContenedorHeader, ContenedorBotones};

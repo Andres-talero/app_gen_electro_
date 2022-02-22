@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {ContenedorFiltros, Formulario, Input, InputGrande, ContenedorBoton} from './../elementos/ElementosDeFormulario'
+import {ContenedorFiltros, Formulario, Input, InputGrande, ContenedorBoton} from '../elementos/ElementosDeFormulario'
 import Boton from '../elementos/Boton';
 import {ReactComponent as IconoPlus} from './../imagenes/plus.svg';
 import agregarCliente from '../firebase/agregarCliente';
 import getUnixTime from 'date-fns/getUnixTime';
 import fromUnixTime from 'date-fns/fromUnixTime';
-import {useAuth} from './../contextos/AuthContext';
+import {useAuth} from '../contextos/AuthContext';
 import Alerta from '../elementos/Alerta';
 import { useNavigate } from 'react-router-dom';
 import editarCliente from '../firebase/editarCliente';
@@ -108,7 +108,7 @@ const Formulariocliente = ({cliente}) => {
                         ciudad: ciudad,
                         fecha: fecha
                     })
-                        navigate(`/cliente/${documento}`);
+                        navigate(-1);
 
                 } else {
 

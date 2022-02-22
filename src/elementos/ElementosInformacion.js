@@ -28,14 +28,25 @@ const ContenedorDatos = styled.div`
 const ContenedorNoDatos = styled.div`
     width: 100%;
     height: 100%;
+    padding: 4rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
  
     @media(max-width: 60rem){ /* 950px */
+        padding: 2rem 0;
     }
 `;
+
+const ContenedorError = styled.div`
+    width: 100%;
+    padding: 1rem 3rem;
+    @media(max-width: 60rem){ /* 950px */
+        padding: 0 1rem;
+    }
+`
 
 const Informacion = styled.div`
     padding: 0 3rem;
@@ -84,6 +95,27 @@ const Texto = styled.p`
     }
 `;
 
+const TextoI = styled(Texto)`
+    font-style: italic;
+    font-weight: lighter;
+`;
+
+const Estado = styled.div`
+    font-size: 1.5rem;
+    border-radius: 0.31rem; /* 5px */
+    background: #5CBAFF ;
+    text-align: center;
+    color: #fff;
+    padding: 0.62rem 3.12rem; /* 10px 50px */
+    display: inline-block;
+    margin: 2rem 0; /* 20px */
+    width: 25%;
+ 
+    @media (max-width: 50rem) { /* 80px */
+        width: 100%;
+    }
+`;
+
 const ContenedorBotones = styled.div`
     width: 100%;
     padding: 1rem;
@@ -128,4 +160,4 @@ const BotonAccion = styled.button`
 
 `;
 
-export {Contenedor, ContenedorDatos, ContenedorNoDatos, Informacion, Dato, TextoPrincipal, Span, Texto, ContenedorBotones, BotonAccion}
+export {Contenedor, ContenedorDatos, ContenedorNoDatos, ContenedorError, Informacion, Dato, TextoPrincipal, Span, Texto, TextoI, Estado, ContenedorBotones, BotonAccion}

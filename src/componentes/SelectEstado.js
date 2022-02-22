@@ -72,23 +72,22 @@ const Opcion = styled.div`
     }
 `;
 
-const SelectRol = ({rol, cambiarRol}) => {
+const SelectEstado = ({estado, cambiarEstado}) => {
 
     const [mostrarSelect, cambiarMostrarSelect] = useState(false);
 
     const categorias = [
-        {id: 'Motorizado', texto: 'Motorizado'},
-        {id: 'Asesor', texto: 'Asesor'},
-        {id: 'Administrador', texto: 'Administrador'},
+        {id: 'Pendiente', texto: 'Pendiente'},
+        {id: 'Completado', texto: 'Completado'},
     ]
 
     const handleClick = (e) => {
-        cambiarRol(e.target.dataset.valor);
+        cambiarEstado(e.target.dataset.valor);
     }
 
     return ( 
         <ContenedorSelect onClick={() => cambiarMostrarSelect(!mostrarSelect)}>
-            <OpcionSeleccionada>{rol} <IconoDown /></OpcionSeleccionada>
+            <OpcionSeleccionada>{estado} <IconoDown /></OpcionSeleccionada>
 
            {mostrarSelect &&
             <Opciones>
@@ -104,4 +103,4 @@ const SelectRol = ({rol, cambiarRol}) => {
      );
 }
  
-export default SelectRol;
+export default SelectEstado;

@@ -5,6 +5,7 @@ import ComprobarUsuario from './ComprobarRol';
 import borrarCliente from '../firebase/borrarCliente';
 import {Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import ErroresPorUsuario from './ErroresPorUsuario';
 
 const DatosCliente = ({cliente}) => {
 
@@ -12,7 +13,7 @@ const DatosCliente = ({cliente}) => {
 
     const pBorrarCliente = (id) =>{
         borrarCliente(id);
-        navigate('/');
+        navigate(-1);
       }
 
     return ( 
@@ -60,6 +61,7 @@ const DatosCliente = ({cliente}) => {
                         <Texto>{FormatearFecha(cli.fecha)}</Texto>
                         </Dato>
                     </Informacion>
+                    <ErroresPorUsuario documento={cli.documento}/>
                     </div>
             );
         })}
