@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {ContenedorDatos, ContenedorError, Informacion, Dato, TextoPrincipal, Span, Texto, TextoI, Estado, ContenedorBotones, BotonAccion} from '../elementos/ElementosInformacion';
 import FormatearFecha from '../funciones/FormatearFecha';
-import ComprobarUsuario from './ComprobarRol';
 import borrarError from '../firebase/borrarError';
 import {Link} from 'react-router-dom';
 import Alerta from '../elementos/Alerta';

@@ -64,7 +64,7 @@ const useObtenerErroresPorClientee = (doc) => {
         return unsuscribe;
 
 
-    }, [])
+    }, [doc])
 
 
 
