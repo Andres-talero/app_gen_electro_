@@ -42,16 +42,16 @@ const Index = () => {
 
           <Routes>
 
-           <Route path="/iniciar-sesion" element={
-             <ValidarSesion>
-                <InicioSesion />
-             </ValidarSesion>
-             }/>
-
-           <Route path="/" element={
+          <Route path="/" element={
                <RutaPrivada>
                   <App />
                </RutaPrivada>
+          }/>
+
+          <Route path="/iniciar-sesion" element={
+             <ValidarSesion>
+                <InicioSesion />
+             </ValidarSesion>
           }/>
 
           <Route path="/crear-cuenta" element={

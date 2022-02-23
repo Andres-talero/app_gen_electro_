@@ -68,8 +68,9 @@ const InicioSesion = () => {
     }
 
     try{
-      await signInWithEmailAndPassword(auth, correo, password);
-      navigate('/');
+      await signInWithEmailAndPassword(auth, correo, password).then(
+        navigate('/')
+      );
     } catch(error){
       let mensaje;
       switch(error.code){

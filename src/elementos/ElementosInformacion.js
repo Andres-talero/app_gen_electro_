@@ -44,7 +44,7 @@ const ContenedorError = styled.div`
     width: 100%;
     padding: 1rem 3rem;
     @media(max-width: 60rem){ /* 950px */
-        padding: 0 1rem;
+        padding: .5rem 2rem;
     }
 `
 

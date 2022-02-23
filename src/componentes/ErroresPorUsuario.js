@@ -7,9 +7,7 @@ import {Contenedor, ContenedorNoDatos, TextoPrincipal} from '../elementos/Elemen
 const ErroresPorUsuario = ({documento}) => {
 
     const [errores] = useObtenerErroresPorCliente(documento);
-
-    console.log(errores);
-
+    
     return ( 
         <>
         <HeaderErrores>

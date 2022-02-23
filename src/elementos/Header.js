@@ -29,8 +29,8 @@ const HeaderErrores = styled.div`
         flex-direction: column;
         align-items: center;
         padding-bottom: 1rem;
-        padding: 0 10rem; /* 40px */
-        margin: 3rem 3rem -2rem 3rem;
+        padding: 1rem 10rem; /* 40px */
+        margin: 3rem 2rem -1rem 2rem;
     }
 `;
  

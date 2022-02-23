@@ -1,18 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ContenedorDatos, ContenedorError, Informacion, Dato, TextoPrincipal, Span, Texto, TextoI, Estado, ContenedorBotones, BotonAccion} from '../elementos/ElementosInformacion';
 import FormatearFecha from '../funciones/FormatearFecha';
 import ComprobarUsuario from './ComprobarRol';
 import borrarError from '../firebase/borrarError';
 import {Link} from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import Alerta from '../elementos/Alerta';
 
 const ErroresPorCliente = ({errores}) => {
 
-    const navigate = useNavigate();
+    const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
+    const [alerta, cambiarAlerta] = useState({});
+
 
     const pBorrarError = (id) =>{
         borrarError(id);
-        navigate(-1);
+        cambiarAlerta({tipo: 'exito', mensaje: 'El error fue eliminado correctamente.'});
+        cambiarEstadoAlerta(true);
       }
 
     const estadoEsIgual = (errores, index, error) => {
@@ -81,6 +84,12 @@ const ErroresPorCliente = ({errores}) => {
                     </ContenedorError>
             );
         })}
+        <Alerta 
+                tipo={alerta.tipo}
+                mensaje={alerta.mensaje}
+                estadoAlerta={estadoAlerta}
+                cambiarEstadoAlerta={cambiarEstadoAlerta}
+        />
         </>
      );
 }

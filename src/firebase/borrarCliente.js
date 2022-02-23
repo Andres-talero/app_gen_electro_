@@ -7,8 +7,6 @@ const borrarCliente = async(id) => {
     try{
         await deleteDoc(doc(db, 'clientes', id))
         } catch(error){
-            console.log('Se presento el error:')
-            console.log(error)
         }
 
 }
