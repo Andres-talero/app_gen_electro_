@@ -13,9 +13,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci
       - run: CI=false && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: w9jds/firebase-action@master
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_APP_GENELECTRO }}'
-          channelId: live
-          projectId: app-genelectro
+          args: Deploy --only hosting
+        env:
+          FIREBASE_TOKEN: '${{ secrets.FIREBASE_TOKEN }}'
