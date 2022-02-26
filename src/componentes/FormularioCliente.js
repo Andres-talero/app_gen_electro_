@@ -10,7 +10,7 @@ import Alerta from '../elementos/Alerta';
 import { useNavigate } from 'react-router-dom';
 import editarCliente from '../firebase/editarCliente';
 
-const Formulariocliente = ({cliente}) => {
+const FormularioCliente = ({cliente}) => {
 
 
     const [nombres, cambiarnombres] = useState('');
@@ -172,7 +172,7 @@ const Formulariocliente = ({cliente}) => {
                     autoComplete='off'
                     value={apellidos}
                     onChange={handleChange}
-                />
+                />{cliente ? <></> :
                 <Input 
                     type="text"
                     name="documento"
@@ -181,6 +181,7 @@ const Formulariocliente = ({cliente}) => {
                     value={documento}
                     onChange={handleChange}
                 />
+                }
                 <Input 
                     type="email"
                     name="correo"
@@ -229,4 +230,4 @@ const Formulariocliente = ({cliente}) => {
      );
 }
  
-export default Formulariocliente;
+export default FormularioCliente;

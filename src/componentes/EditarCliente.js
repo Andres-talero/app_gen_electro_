@@ -4,7 +4,7 @@ import { useNavBot } from './../contextos/NavBotContext';
 import { Helmet } from 'react-helmet';
 import {Header, Titulo, ContenedorHeader} from '../elementos/Header'
 import BtnRegresar from '../elementos/BtnRegresar';
-import FormularioGasto from './FormularioGasto';
+import FormularioCliente from './FormularioCliente';
 import { useParams } from 'react-router-dom';
 import useObtenerCliente from '../hooks/useObtenerCliente';
 
@@ -40,7 +40,7 @@ const EditarCliente = () => {
         </ContenedorHeader>
     </Header>
 
-    <FormularioGasto cliente={cliente}/>
+    <FormularioCliente cliente={cliente}/>
 
     </>
       );

@@ -34,7 +34,7 @@ const UserProvider = ({children}) => {
                     const documento = await getDoc(doc(db, 'usuarios', id));
 
                 if(documento.data()){
-                    establecerDatosUsuario(documento.data());
+                    establecerDatosUsuario({...documento.data(), id: documento.id});
                     cambiarCargando(false);
                 }
 

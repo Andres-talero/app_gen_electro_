@@ -5,7 +5,7 @@ import { useUser } from './../contextos/UserContext';
 import { useNavBot } from './../contextos/NavBotContext';
 import ComprobarUsuario from './ComprobarRol';
 import BtnRegresar from '../elementos/BtnRegresar';
-import FormularioGasto from './FormularioGasto';
+import FormularioCliente from './FormularioCliente';
 
 
 const CrearCliente = () => {
@@ -34,7 +34,7 @@ useEffect(() => {
               <Titulo>Crear Cliente</Titulo>
             </ContenedorHeader>
         </Header>
-        <FormularioGasto />
+        <FormularioCliente />
       </ComprobarUsuario>
   </>
    );
