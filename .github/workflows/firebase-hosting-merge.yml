@@ -9,13 +9,28 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    environment: 
+      name: GenElectro
+      url: https://app-genelectro.web.app/
     steps:
       - uses: actions/checkout@v2
       - run: npm ci
       - run: CI=false && npm run build
+        env: 
+          REACT_APP_APIKEY: ${{ secrets.REACT_APP_APIKEY }}
+          REACT_APP_AUTHDOMAIN: ${{ secrets.REACT_APP_AUTHDOMAIN }}
+          REACT_APP_PROJECTID: ${{ secrets.REACT_APP_PROJECTID }}
+          REACT_APP_STORAGEBUCKET: ${{ secrets.REACT_APP_STORAGEBUCKET }}
+          REACT_APP_MESSAGINGSENDERID: ${{ secrets.REACT_APP_MESSAGINGSENDERID }}
+          REACT_APP_APPID: ${{ secrets.REACT_APP_APPID }}
+          REACT_APP_APPID_MEASUREMENTID: ${{ secrets.REACT_APP_APPID_MEASUREMENTID }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_APP_GENELECTRO }}'
+<<<<<<< HEAD
+=======
+          projectId: app-genelectro
+>>>>>>> daca1c0814569ae68e66e4ee21af6ac8455505e8
           channelId: live
           projectId: app-genelectro
